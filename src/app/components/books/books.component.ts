@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AgGridAngular } from 'ag-grid-angular';
-import {
-  CellClickedEvent,
-  ColDef,
-  GridReadyEvent,
-  GridOptions,
-} from 'ag-grid-community';
+import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/Book';
-import { BOOKS } from 'src/app/mock-books';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-books',
@@ -15,32 +9,11 @@ import { BOOKS } from 'src/app/mock-books';
   styleUrls: ['./books.component.css'],
 })
 export class BooksComponent implements OnInit {
-  books: Book[] = BOOKS;
+  books: Book[] = [];
 
-  constructor() {
-    this.gridOptions = {
-      columnDefs: this.columnDefs(),
-      rowData: [],
-    };
+  constructor(private bookService: BookService) {}
+
+  ngOnInit(): void {
+    this.bookService.getBooks().subscribe((books) => (this.books = books));
   }
-
-  ngOnInit(): void {}
-
-  public columnDefs(): ColDef[] {
-    return [
-      { headerName: 'Type', field: 'type', width: 70 },
-      { headerName: 'Genre', field: 'genre', width: 100 },
-      { headerName: 'Title', field: 'title', width: 150 },
-      { headerName: 'Status', field: 'status', width: 85 },
-      { headerName: 'Score', field: 'score', width: 50 },
-      { headerName: 'Author', field: 'author', width: 80 },
-    ];
-  }
-  public defaultColDef: ColDef = {
-    sortable: true,
-    filter: true,
-  };
-
-  gridOptions: GridOptions;
-  rowData: any;
 }
