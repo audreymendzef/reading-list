@@ -1,0 +1,76 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "type": "Fiction",
+      "genre": "Romance",
+      "title": "Birthday Girl",
+      "status": "Finished",
+      "score": "4",
+      "author": "Penelope Douglas"
+    },
+    {
+      "id": "2",
+      "type": "Fiction",
+      "genre": "Historical Fiction",
+      "title": "Malibu Rising",
+      "status": "Finished",
+      "score": "4",
+      "author": "Taylor Jenkins Reid"
+    },
+    {
+      "id": "3",
+      "type": "Fiction",
+      "genre": "Dystopian",
+      "title": "Legend",
+      "status": "Finished",
+      "score": "2",
+      "author": "Marie Lu"
+    },
+    {
+      "id": "4",
+      "type": "Fiction",
+      "genre": "Dystopian",
+      "title": "Prodigy",
+      "status": "Reading",
+      "score": "",
+      "author": "Marie Lu"
+    },
+    {
+      "id": "5",
+      "type": "Fiction",
+      "genre": "Dystopian",
+      "title": "Champion",
+      "status": "Want to Read",
+      "score": "",
+      "author": "Marie Lu"
+    },
+    {
+      "id": "6",
+      "type": "Fiction",
+      "genre": "Dystopian",
+      "title": "Rebel",
+      "status": "Want to Read",
+      "score": "",
+      "author": "Marie Lu"
+    },
+    {
+      "id": "7",
+      "type": "Fiction",
+      "genre": "War Drama",
+      "title": "A Thousand Splendid Suns",
+      "status": "Finished",
+      "score": "4",
+      "author": "Khaled Hosseini"
+    },
+    {
+      "id": "8",
+      "type": "Fiction",
+      "genre": "Drama Romance",
+      "title": "Wish You Were Here",
+      "status": "Finished",
+      "score": "3",
+      "author": "Jodi Picoult"
+    }
+  ]
+}
