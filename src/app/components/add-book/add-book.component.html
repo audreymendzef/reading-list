@@ -1,0 +1,94 @@
+<form class="add-book" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="form-control">
+      <label for="title">Book Title:</label>
+      <input
+        type="text"
+        name="title"
+        [(ngModel)]="title"
+        id="title"
+        placeholder="Add Book Title"
+      />
+    </div>
+    <div class="form-control">
+      <label for="author">Author:</label>
+      <input
+        type="text"
+        name="author"
+        [(ngModel)]="author"
+        id="author"
+        placeholder="Add Author"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-control">
+      <label for="type">Type:</label>
+      <select name="type" [(ngModel)]="type" id="type">
+        <option value="" selected disabled hidden>Select One</option>
+        <option value="fiction">Fiction</option>
+        <option value="nonfiction">Non-Fiction</option>
+      </select>
+    </div>
+    <div class="form-control">
+      <label for="genre">Genre:</label>
+      <select name="genre" [(ngModel)]="genre" id="genre">
+        <option value="" selected disabled hidden>Select One</option>
+        <option value="romance">Romance</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="scifi">Sci-Fi</option>
+        <option value="wardrama">War Drama</option>
+        <option value="dystopian">Dystopian</option>
+        <option value="darkromance">Dark Romance</option>
+        <option value="histfict">Historical Fiction</option>
+        <option value="dramarom">Drama Romance</option>
+        <option value="sadrom">Sad Romance</option>
+        <option value="greekmythdrama">Greek Myth Drama</option>
+        <option value="smut">Smut</option>
+        <option value="comingofagerom">Coming of Age Romance</option>
+        <option value="comingofage">Coming of Age</option>
+        <option value="lgbtrom">LGBT Romance</option>
+        <option value="romcom">Rom-Com</option>
+        <option value="mystery">Mystery</option>
+        <option value="dramamystery">Drama Mystery</option>
+        <option value="actionadventure">Action/Adventure</option>
+        <option value="thrillersuspense">Thriller/Suspense</option>
+        <option value="horror">Horror</option>
+        <option value="youngadult">Young Adult</option>
+        <option value="autobiography">AutoBiography</option>
+        <option value="biography">Biography</option>
+        <option value="selfhelp">Self-Help</option>
+        <option value="history">History</option>
+        <option value="travel">Travel</option>
+        <option value="truecrime">True Crime</option>
+        <option value="essay">Essay</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-control">
+      <label for="status">Status:</label>
+      <select name="status" [(ngModel)]="status" id="status">
+        <option value="" selected disabled hidden>Select One</option>
+        <option value="wanttoread">Want to Read</option>
+        <option value="reading">Reading</option>
+        <option value="finished">Finished</option>
+      </select>
+    </div>
+    <div class="form-control">
+      <label for="score">Score:</label>
+      <select name="score" [(ngModel)]="score" id="score">
+        <option value="" selected disabled hidden>Select One</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+  </div>
+
+  <input type="submit" value="Save Book" class="save-btn btn btn-block" />
+</form>

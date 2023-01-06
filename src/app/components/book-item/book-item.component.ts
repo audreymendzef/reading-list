@@ -75,7 +75,7 @@ export class BookItemComponent implements OnInit {
             'History',
             'Travel',
             'True Crime',
-            'Essays',
+            'Essay',
           ],
         },
       },

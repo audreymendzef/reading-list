@@ -1,0 +1,10 @@
+.add-book {
+  margin-bottom: 40px;
+  width: 400px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}

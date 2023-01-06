@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/Book';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-books',
@@ -15,5 +14,9 @@ export class BooksComponent implements OnInit {
 
   ngOnInit(): void {
     this.bookService.getBooks().subscribe((books) => (this.books = books));
+  }
+
+  addBook(book: Book) {
+    this.bookService.addBook(book).subscribe((book) => this.books.push(book));
   }
 }
