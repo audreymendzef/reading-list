@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs';
 import { Book } from 'src/app/Book';
 
 @Component({
@@ -15,8 +17,15 @@ export class AddBookComponent implements OnInit {
   genre!: string;
   status!: string;
   score!: string | number;
+  showAddBook!: boolean;
+  subscription: Subscription;
 
-  constructor() {}
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService
+      .onToggle()
+      .subscribe((value) => (this.showAddBook = value));
+  }
+
   ngOnInit(): void {}
 
   onSubmit() {

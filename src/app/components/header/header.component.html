@@ -1,8 +1,8 @@
 <header>
   <h1>{{ title }}</h1>
   <app-button
-    text="+Add"
-    color="green"
+    text="{{ showAddBook ? 'Close' : '+Add' }}"
+    color="{{ showAddBook ? 'red' : 'green' }}"
     (btnClick)="toggleAddBook()"
   ></app-button>
 </header>
