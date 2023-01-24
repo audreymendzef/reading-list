@@ -30,7 +30,7 @@ export class AddBookComponent implements OnInit {
 
   onSubmit() {
     if (!this.title) {
-      alert('Please add title!');
+      alert('Please add book title!');
       return;
     }
 

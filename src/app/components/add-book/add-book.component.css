@@ -8,3 +8,11 @@
   display: flex;
   flex-direction: row;
 }
+
+#title {
+  height: 22px;
+}
+
+#author {
+  height: 22px;
+}
