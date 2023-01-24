@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
+import { Book } from 'src/app/Book';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,11 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  @Input() book!: Book;
   title: string | undefined = 'Reading List';
   showAddBook!: boolean;
   subscription!: Subscription;
+  faTrashCan = faTrashCan;
 
   constructor(private uiService: UiService) {
     this.subscription = this.uiService
@@ -22,5 +26,9 @@ export class HeaderComponent implements OnInit {
 
   toggleAddBook() {
     this.uiService.toggleAddBook();
+  }
+
+  onDelete() {
+    console.log('hi');
   }
 }

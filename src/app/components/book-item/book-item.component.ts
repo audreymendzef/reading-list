@@ -4,6 +4,8 @@ import { BookService } from 'src/app/services/book.service';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, GridReadyEvent, GridOptions } from 'ag-grid-community';
 import { Book } from 'src/app/Book';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { deleteIconRenderer } from 'src/app/deleteIconRenederer';
 
 @Component({
   selector: 'app-book-item',
@@ -11,12 +13,16 @@ import { Book } from 'src/app/Book';
   styleUrls: ['./book-item.component.css'],
 })
 export class BookItemComponent implements OnInit {
+  faTrashCan = faTrashCan;
+
   constructor(private bookService: BookService) {
     this.gridOptions = {
       columnDefs: this.columnDefs(),
       rowData: [],
     };
   }
+
+  displayDeleteImage() {}
 
   onGridReady(params: GridReadyEvent) {
     this.rowData$ = this.bookService.getBooks();
@@ -101,6 +107,12 @@ export class BookItemComponent implements OnInit {
         width: 90,
       },
       { headerName: 'Author', field: 'author', editable: true, width: 175 },
+      {
+        headerName: 'Edit',
+        field: 'edit',
+        width: 100,
+        cellRenderer: deleteIconRenderer,
+      },
     ];
   }
   public defaultColDef: ColDef = {
